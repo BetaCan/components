@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout.jsx";
+import Home from "./components/views/Home.jsx";
+// import Modules from "./components/views/Modules.jsx";
+// import Students from "./components/views/Students.jsx";
+import Projects from "./components/views/Projects.jsx";
+import Login from "./components/views/Login.jsx";
+import PageNotFound from "./components/views/PageNotFound.jsx";
+import Project from "./components/entity/project/Project.jsx";
+import Pie from "./components/Pie/pie.jsx";
+import { AuthProvider } from "./components/auth/useAuth.jsx";
+import Account from "./components/views/Account.jsx";
+import Modules from "./components/views/Modules.jsx";
+import Assessments from "./components/views/Assessments.jsx";
+import Groups from "./components/views/Groups.jsx";
+import Register from "./components/views/Register.jsx";
+import Overview from "./components/views/Overview.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // initialization
+  const loggedInUser = "User";
+
+  // State -------------
+  // Handlers ----------
+  // Helpers -----------
+  // View --------------
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+        <Layout loggedInUser={loggedInUser}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/projects/:groupID" element={<Project />} />
+            <Route path="/projects/" element={<Projects />} />
+            <Route path="/pie/" element={<Pie />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/modules" element={<Modules />} />
+            <Route path="/assessments/:moduleID" element={<Assessments />} />
+            <Route path="/groups/:assessmentID" element={<Groups />} />
+            <Route path="/Overview" element={<Overview />} />
+            <Route path="/*" element={<PageNotFound />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
+// <Route path="/students" element={<Students />} />
+// <Route path="/modules" element={<Modules />} />
+//
+//
+// <Route path="/projects/:GroupID" element={<Project GroupID={1} />} />

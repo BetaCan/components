@@ -1,0 +1,54 @@
+.Register-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.Register-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: auto;
+  max-width: auto;
+  text-align: center;
+}
+
+.Register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Register-info h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.Register-info p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.loRegistergin-info p strong {
+  color: #333;
+}
+
+.Register-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Register-button:hover {
+  background-color: #0056b3;
+}

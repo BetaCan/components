@@ -1,0 +1,91 @@
+$yellowBee: #ffd375; // yellow bee color
+$yellowBeeHover: darken($yellowBee, 10%); // darker yellow for hover effect
+$textColor: #333; // default text color
+$borderColor: #ccc; // border color for table
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  color: $textColor;
+}
+
+label {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.2em;
+
+  select {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid $borderColor;
+    font-size: 1em;
+    background-color: $yellowBee;
+    cursor: pointer;
+    transition:
+      background-color 0.2s,
+      transform 0.2s;
+
+    &:hover {
+      background-color: $yellowBeeHover;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  text-align: left;
+
+  caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px 0;
+    color: $textColor;
+  }
+
+  thead {
+    background-color: black;
+    color: white;
+
+    th {
+      padding: 10px;
+      border: 1px solid $borderColor;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      &:hover {
+        background-color: $yellowBee;
+        color: black;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        
+      }
+
+      td {
+        padding: 10px;
+        border: 1px solid $borderColor;
+      }
+    }
+  }
+  .submissionDate {
+    font-style: italic;
+  }
+}

@@ -1,0 +1,93 @@
+
+Hi this is will serve as a guide sheet on how use and maintain scss 
+
+this is an example of how it would look like when organizing everything
+
+/src
+  /styles
+	variables.scss
+	mixins.scss
+	base.scss
+  /components
+	/Navbar
+	  Navbar.jsx
+	  Navbar.scss
+
+
+Variables: Define common values.
+Mixins: Create reusable chunks of CSS.
+base: a base template that all files must use
+
+
+when importing we just need to import
+
+// Styling imports
+@import '../../styles/mixins.scss';
+@import '../../styles/base.scss';
+
+not sure whether we want to import variables as that will be imported into base for styling colors and words in it 
+
+trying to minimize abstraction as much as possible until everything works correctly so finding bugs will be easier 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Hi this is will serve as a guide sheet on how use and maintain scss 
+
+this is an example of how it would look like when organizing everything
+
+/src
+  /styles
+	_variables.scss
+	_mixins.scss
+	_base.scss
+	main.scss 
+  /components
+	/Navbar
+	  Navbar.jsx
+	  Navbar.scss
+
+
+Variables: Define common values.
+Mixins: Create reusable chunks of CSS.
+Partials: Break SCSS into smaller files and import them.
+Methodology: Follow a methodology like BEM.
+Nesting: Use nesting wisely.
+CSS Modules: Consider using CSS Modules for scoped styles.
+
+
+main.scss will have all the imposts for every file
+
+@import 'variables';
+@import 'mixins';
+@import 'base';
+@import 'buttons';
+@import 'navbar';
+
+
+we can then just import main.scss to use it
+
+import './styles/main.scss';
+
+// note to self don't abstract the main.scss file as it may get get harder to locate bugs
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+

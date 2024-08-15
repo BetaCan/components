@@ -1,3 +1,6 @@
+# Allow for different APIs
+apiURL.js
+
 # Logs
 logs
 *.log

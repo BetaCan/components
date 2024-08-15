@@ -1,0 +1,58 @@
+// Styling imports
+@import "../../Styles/mixins.scss";
+@import "../../Styles/base.scss";
+
+//Login.scss
+.login-container {
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: $font;
+}
+
+.login-info h2 {
+  color: $black;
+}
+
+.login-element {
+  @include flex-column;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-info {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-form {
+  @include flex-column;
+  align-items: center;
+  width: 100%;
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: $font;
+  }
+
+  .login-button {
+    @include button-style;
+    margin: 0.5rem 0;
+  }
+
+  .link {
+    @include click-prompt;
+    margin-top: 1rem;
+  }
+}
